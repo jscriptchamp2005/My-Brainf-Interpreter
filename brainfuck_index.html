@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Brainf*** Interpreter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script>
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Brainf*** Interpreter</h1>
+    </header>
+    <section>
+      <h2>Overview of Interpreter</h2>
+      <p>As you all know, Brainfuck (censored as Brainf**k or Brainf*** sometimes) was a programming language created by Urban Müller as a programming language that can be run on the smallest interpreter.</p>
+      <p>It is composed of memory, which is an array of 30000 bytes, which includes a byte pointer, pointing to one of the 30000 bytes (note that they are all initially set to 0).</p>
+      <p>There are 8 commands, >; <; +; -; .; ,; [; and ] which can be used to manipulate with the 30000-byte array.</p>
+      <p>Enjoy this Brainf*** interpreter!</p>
+    </section>
+    <section>
+      <form action="#" id="brainfuck">
+        <label for="code">Implement Brainf*** code here:</label> <br />
+        <textarea rows="30" cols="60"></textarea> <br />
+        <input type="submit" value="Run!" />
+      </form>
+    </section>
+    <section>
+      <h2>Brainf*** output:</h2>
+      <p id="output"></p>
+    </section>
+  </body>
+</html>
