@@ -14,8 +14,21 @@
         this.tapeSize = Array.apply(null, Array(tapeSize)).map(function(a) { return a; });
         this.p = 0;
         this.memory = new Array();
+        this.nextUp = 0;
         this.getMemory = function(p) {
           return this.memory[p] || 0;
+        }
+        this.commands = {
+          ">": function() { if(p < tapeSize) { this.p++; } else { throw new Error("There are only " + tapeSize + " usable cells of memory."); } },
+          "<": function() { if(p > 0) { this.p--; } else { throw new Error("Cannot decrement pointer when at first cell."); } },
+          "+": function() { 
+            this.getMemory(this.p)++;
+            if(this.getMemory(this.p) > 255) { this.getMemory(this.p) = 0; }
+          },
+          "-": function() {
+            this.getMemory(this.p)++;
+            if(this.getMemory(this.p) < 0) { this.getMemory(this.p) = 255 }
+          }
         }
       }
       
