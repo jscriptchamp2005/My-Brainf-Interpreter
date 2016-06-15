@@ -7,6 +7,22 @@
     <script src="loopFinder.js"></script>
     <script src="jqueryInterface.js"></script>
     <script>
+      // Credit goes to where it is due!
+      var TAPE_SIZE = 30000;
+      
+      function BrainfuckRunner(tapeSize) {
+        this.tapeSize = Array.apply(null, Array(tapeSize)).map(function(a) { return a; });
+        this.p = 0;
+        this.memory = new Array();
+        this.getMemory = function(p) {
+          return this.memory[p] || 0;
+        }
+      }
+      
+      BrainfuckRunner.prototype.runBrainf = function(implement) {
+        var code = inputCode.replace(/[^-+<>.,[\]]/g, '').split('');
+        var loopCommand = loopFinder(code);
+      }
     </script>
   </head>
   <body>
